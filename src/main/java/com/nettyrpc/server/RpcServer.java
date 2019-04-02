@@ -40,7 +40,7 @@ public class RpcServer implements ApplicationContextAware, InitializingBean {
     private ServiceRegistry serviceRegistry;
 
     private Map<String, Object> handlerMap = new HashMap<>();
-    private static ThreadPoolExecutor threadPoolExecutor;
+    private static volatile ThreadPoolExecutor threadPoolExecutor;
 
     private EventLoopGroup bossGroup = null;
     private EventLoopGroup workerGroup = null;
